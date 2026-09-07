@@ -1,0 +1,456 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hak ve Bilgi</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f2f4f7;
+    color:#17202a;
+    padding-bottom:85px;
+}
+
+header{
+    background:linear-gradient(135deg,#111827,#374151);
+    color:white;
+    padding:28px 20px;
+    border-radius:0 0 28px 28px;
+}
+
+header h1{
+    font-size:28px;
+    margin-bottom:7px;
+}
+
+header p{
+    opacity:.85;
+}
+
+.container{
+    max-width:650px;
+    margin:auto;
+    padding:18px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:16px;
+    box-shadow:0 5px 18px #00000012;
+}
+
+.card h2{
+    margin-bottom:9px;
+}
+
+.card p{
+    color:#667085;
+    line-height:1.5;
+    margin-bottom:14px;
+}
+
+.btn{
+    width:100%;
+    border:0;
+    border-radius:14px;
+    padding:15px;
+    margin-top:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.green{background:#166534;color:white;}
+.red{background:#b91c1c;color:white;}
+.dark{background:#111827;color:white;}
+.blue{background:#2563eb;color:white;}
+.gray{background:#e5e7eb;color:#111827;}
+
+.hidden{
+    display:none;
+}
+
+.sectionTitle{
+    font-size:24px;
+    margin:5px 0 15px;
+}
+
+.info{
+    background:#f8fafc;
+    border-radius:14px;
+    padding:14px;
+    line-height:1.5;
+    margin-top:12px;
+}
+
+.badge{
+    display:inline-block;
+    background:#eef2ff;
+    color:#3730a3;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+/* GÖKBAYRAK */
+.gokbayrak{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:27px;
+    background:#1687d9;
+    border-radius:4px;
+    color:white;
+    font-size:22px;
+    vertical-align:middle;
+    margin-right:5px;
+    box-shadow:0 2px 5px #0003;
+}
+
+/* ALT MENÜ */
+.bottom{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:75px;
+    background:white;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    box-shadow:0 -4px 15px #00000018;
+    z-index:10;
+}
+
+.nav{
+    border:0;
+    background:none;
+    color:#667085;
+    font-size:11px;
+}
+
+.nav span{
+    display:block;
+    font-size:23px;
+    margin-bottom:3px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌍 Hak ve Bilgi</h1>
+    <p>Filistin • Doğu Türkistan • Boykot</p>
+</header>
+
+<main class="container">
+
+<!-- ANA SAYFA -->
+<section id="home">
+
+    <div class="card">
+        <h2>👋 Hoş geldin</h2>
+        <p>
+            Filistin ve Doğu Türkistan hakkında güvenilir kaynaklara
+            ulaşabilir, yardım kuruluşlarının resmî sayfalarını ziyaret
+            edebilir ve Boykot Dedektifi'ni açabilirsin.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🇵🇸 Filistin</h2>
+        <p>
+            Bilgi, güncel raporlar ve resmî yardım kuruluşları.
+        </p>
+        <button class="btn red" onclick="showPage('palestine')">
+            🇵🇸 Filistin Bölümünü Aç
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>
+            <span class="gokbayrak">☪</span>
+            Doğu Türkistan
+        </h2>
+
+        <p>
+            İnsan hakları bilgileri ve yardım bağlantıları.
+        </p>
+
+        <button class="btn dark" onclick="showPage('east')">
+            <span class="gokbayrak">☪</span>
+            Doğu Türkistan Bölümünü Aç
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>🔎 Boykot Dedektifi</h2>
+        <p>
+            Markaları araştırmak ve boykot durumlarını incelemek için
+            Boykot Dedektifi'ni aç.
+        </p>
+        <button class="btn green" onclick="openBoykotDedektifi()">
+            🔎 Boykot Dedektifi'ni Aç
+        </button>
+    </div>
+
+</section>
+
+
+<!-- FİLİSTİN -->
+<section id="palestine" class="hidden">
+
+    <h2 class="sectionTitle">🇵🇸 Filistin</h2>
+
+    <div class="card">
+        <span class="badge">📚 Bilgi</span>
+        <h2>BM OCHA</h2>
+
+        <p>
+            İşgal Altındaki Filistin Toprakları hakkında Birleşmiş
+            Milletler OCHA'nın yayımladığı raporlar.
+        </p>
+
+        <button class="btn blue"
+            onclick="openURL('https://www.ochaopt.org/publications')">
+            📰 OCHA Raporlarını Aç
+        </button>
+    </div>
+
+    <div class="card">
+        <span class="badge">❤️ Bağış</span>
+        <h2>UNRWA – Gazze</h2>
+
+        <p>
+            UNRWA'nın resmî Gazze acil yardım bağış sayfasına git.
+        </p>
+
+        <button class="btn red"
+            onclick="openURL('https://donate.unrwa.org/int/en/gaza')">
+            ❤️ Gazze'ye Bağış Yap
+        </button>
+    </div>
+
+    <div class="card">
+        <span class="badge">🚑 Bağış</span>
+        <h2>Filistin Kızılayı</h2>
+
+        <p>
+            Palestine Red Crescent Society'nin resmî sitesini ziyaret et.
+        </p>
+
+        <button class="btn red"
+            onclick="openURL('https://www.palestinercs.org/en')">
+            🚑 Filistin Kızılayını Aç
+        </button>
+    </div>
+
+    <div class="card">
+        <span class="badge">🏥 İnsani Yardım</span>
+        <h2>ICRC</h2>
+
+        <p>
+            Uluslararası Kızılhaç Komitesi'nin Filistin ve bölgedeki
+            insani yardım çalışmalarına ulaş.
+        </p>
+
+        <button class="btn blue"
+            onclick="openURL('https://www.icrc.org/en/where-we-work/middle-east/israel-and-occupied-territories')">
+            🏥 ICRC Bilgilerini Aç
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>ℹ️ Güvenli Bağış</h2>
+
+        <div class="info">
+            Bağış yaparken sosyal medyada paylaşılan kişisel hesaplar
+            yerine kuruluşların kendi resmî internet sitelerini
+            kullanmaya dikkat et.
+        </div>
+    </div>
+
+</section>
+
+
+<!-- DOĞU TÜRKİSTAN -->
+<section id="east" class="hidden">
+
+    <h2 class="sectionTitle">
+        <span class="gokbayrak">☪</span>
+        Doğu Türkistan
+    </h2>
+
+    <div class="card">
+        <span class="badge">📚 İnsan Hakları</span>
+        <h2>BM İnsan Hakları Ofisi</h2>
+
+        <p>
+            Birleşmiş Milletler İnsan Hakları Ofisi'nin Çin ve
+            Xinjiang hakkındaki kaynaklarına ulaş.
+        </p>
+
+        <button class="btn blue"
+            onclick="openURL('https://www.ohchr.org/en/countries/china')">
+            📄 BM Kaynaklarını Aç
+        </button>
+    </div>
+
+    <div class="card">
+        <span class="badge">❤️ Bağış</span>
+        <h2>İHH – Doğu Türkistan</h2>
+
+        <p>
+            İHH'nın Doğu Türkistan için hazırladığı resmî bağış
+            sayfasına ulaş.
+        </p>
+
+        <button class="btn red"
+            onclick="openURL('https://ihh.org.tr/en/donate/xingjianuyghur')">
+            ❤️ Doğu Türkistan'a Bağış
+        </button>
+    </div>
+
+    <div class="card">
+        <span class="badge">📖 Bilgi</span>
+        <h2>Uyghur Human Rights Project</h2>
+
+        <p>
+            Uygur insan hakları konusunda araştırma ve raporlara ulaş.
+        </p>
+
+        <button class="btn blue"
+            onclick="openURL('https://uhrp.org/')">
+            📖 Raporları Aç
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>ℹ️ Bilgi</h2>
+
+        <p>
+            Doğu Türkistan/Xinjiang konusunda farklı kaynakları
+            karşılaştırarak bilgi edinmek önemlidir.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- BOYKOT DEDEKTİFİ -->
+<section id="boycott" class="hidden">
+
+    <h2 class="sectionTitle">🔎 Boykot Dedektifi</h2>
+
+    <div class="card">
+
+        <span class="badge">📱 Android Uygulaması</span>
+
+        <h2>Boykot Dedektifi</h2>
+
+        <p>
+            Markaları aramak, boykot durumlarını öğrenmek ve marka
+            bilgilerini incelemek için Boykot Dedektifi'ni aç.
+        </p>
+
+        <button class="btn green" onclick="openBoykotDedektifi()">
+            📱 Google Play'de Aç
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>🔎 Neler yapabilirsin?</h2>
+
+        <div class="info">
+            • Marka arayabilirsin.<br><br>
+            • Boykot durumunu inceleyebilirsin.<br><br>
+            • Marka bilgilerini görebilirsin.<br><br>
+            • Uygulamadaki güncel bilgileri kontrol edebilirsin.
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ALT MENÜ -->
+<nav class="bottom">
+
+    <button class="nav" onclick="showPage('home')">
+        <span>🏠</span>
+        Ana Sayfa
+    </button>
+
+    <button class="nav" onclick="showPage('palestine')">
+        <span>🇵🇸</span>
+        Filistin
+    </button>
+
+    <button class="nav" onclick="showPage('east')">
+        <span class="gokbayrak">☪</span>
+        Doğu Türkistan
+    </button>
+
+    <button class="nav" onclick="showPage('boycott')">
+        <span>🔎</span>
+        Boykot
+    </button>
+
+</nav>
+
+
+<script>
+
+function showPage(page){
+
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("palestine").classList.add("hidden");
+    document.getElementById("east").classList.add("hidden");
+    document.getElementById("boycott").classList.add("hidden");
+
+    document.getElementById(page).classList.remove("hidden");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+function openURL(url){
+    window.open(url,"_blank");
+}
+
+
+function openBoykotDedektifi(){
+
+    window.open(
+        "https://play.google.com/store/apps/details?id=com.medyazilim.boykotdedektifi",
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
+```
