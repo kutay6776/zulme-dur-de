@@ -1,0 +1,14 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Zulme dur de!",
+  "orientation": "any",
+  "scope": "/zulme-dur-de/",
+  "short_name": "zulme dur de",
+  "start_url": "/zulme-dur-de/",
+  "theme_color": "#ffffff",
+  "id": "zulme-dur-de",
+  "description": "Filistin ve Doğu Türkistan hakkında güvenilir kaynaklara ulaşabileceğin, yardım kuruluşlarının resmî sayfalarını inceleyebileceğin ve boykot bilgilerine erişebileceğin bilgilendirici uygulama.",
+  "lang": "tr"
+}
