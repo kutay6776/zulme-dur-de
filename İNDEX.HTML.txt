@@ -1,2 +1,2 @@
 intex.html
-<link rel="manifest" href="/zulme-dur-de/manifest (1).json">
+<link rel="manifest" href="/zulme-dur-de/manifest (10).json">
