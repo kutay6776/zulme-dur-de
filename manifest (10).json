@@ -1,0 +1,18 @@
+{
+  "background_color": "#fffbfb",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Zulme dur de!",
+  "orientation": "any",
+  "scope": "/zulme-dur-de/",
+  "short_name": "zulme dur de",
+  "start_url": "https://kutay6776.github.io/zulme-dur-de/",
+  "theme_color": "#ffffff",
+  "id": "zulme-dur-de",
+  "lang": "tr",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
+  ],
+  "description": "Zulme Dur De, insan hakları ve dünya genelindeki zulümler hakkında bilgilendirici bir uygulamadır."
+}
